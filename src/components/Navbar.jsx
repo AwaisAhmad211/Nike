@@ -6,13 +6,13 @@ import { hamburger } from '../assets/icons'
 
 const Navbar = () => {
   return (
-    <header className='w-full absolute'>
-        <nav className='flex justify-around py-4'>
+    <header className='w-full max-containar absolute'>
+        <nav className='flex justify-between py-4 padding-x'>
             <a href="/"><img src={headerLogo} alt="Logo" width={100}/></a>
             <div>
                 <ul className='flex gap-4 flex-row max-md:hidden'>
                     {navLinks.map((item)=>(
-                        <div>
+                        <div key={item.href}>
                             <a href={item.href}>{item.label}</a>
                         </div>
                     ))}
