@@ -5,6 +5,7 @@ import PopularProducts from './sections/PopularProducts'
 import SuperQuality from './sections/SuperQuality'
 import Services from './sections/Services'
 import SpecialOffer from './sections/SpecialOffer'
+import CustomerReviews from './sections/CustomerReviews'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +27,9 @@ function App() {
     </section>
     <section>
       <SpecialOffer />
+    </section>
+    <section>
+      <CustomerReviews />
     </section>
     </>
   )

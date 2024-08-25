@@ -29,8 +29,8 @@ const SpecialOffer = () => {
            <img
             src={offer}
             alt="Shoe8"
-            width={570}
-            height={522}
+            width={773}
+            height={687}
             className='object-contain'
             />
         </div>
