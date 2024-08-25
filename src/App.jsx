@@ -3,6 +3,7 @@ import Hero from './sections/Hero'
 import Navbar from './components/Navbar'
 import PopularProducts from './sections/PopularProducts'
 import SuperQuality from './sections/SuperQuality'
+import Services from './sections/Services'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,9 @@ function App() {
     </section>
     <section>
       <SuperQuality />
+    </section>
+    <section>
+      <Services/>
     </section>
     </>
   )
