@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Hero from './sections/Hero'
 import Navbar from './components/Navbar'
 import PopularProducts from './sections/PopularProducts'
+import SuperQuality from './sections/SuperQuality'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,9 @@ function App() {
     </section>
     <section>
       <PopularProducts />
+    </section>
+    <section>
+      <SuperQuality />
     </section>
     </>
   )

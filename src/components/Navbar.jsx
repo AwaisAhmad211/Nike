@@ -6,7 +6,7 @@ import { hamburger } from '../assets/icons'
 
 const Navbar = () => {
   return (
-    <header className='w-full max-containar absolute'>
+    <header className='w-full max-containar absolute z-11'>
         <nav className='flex justify-between py-4 padding-x'>
             <a href="/"><img src={headerLogo} alt="Logo" width={100}/></a>
             <div>
