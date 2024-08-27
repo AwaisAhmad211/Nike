@@ -2,24 +2,31 @@ import React from 'react'
 import { headerLogo } from '../assets/images'
 import { navLinks } from '../constants'
 import { hamburger } from '../assets/icons'
+import { useState } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 
 const Navbar = () => {
+    useGSAP(()=>{
+       gsap.to("#nav",{opacity:1,y:0,stagger:2})
+    },[])
   return (
     <header className='w-full max-containar absolute z-11'>
-        <nav className='flex justify-between py-4 padding-x'>
+        <nav id='nav' className='flex justify-between py-4 padding-x opacity-0 translate-y-12'>
             <a href="/"><img src={headerLogo} alt="Logo" width={100}/></a>
             <div>
-                <ul className='flex gap-4 flex-row max-md:hidden'>
-                    {navLinks.map((item)=>(
-                        <div key={item.href}>
+                <ul className='flex gap-4 flex-row max-md:hidden cursor-pointer'>
+                    {navLinks.map((item)=> (
+                        <li key={item.label}>
                             <a href={item.href}>{item.label}</a>
-                        </div>
+                        </li>
                     ))}
                 </ul>
             </div>
             <a className='text-blue-500 underline font-semibold max-md:hidden' href="#">see more</a>
-            <img className='max-md:block hidden' src={hamburger} alt="Hamburger" width={20} height={20}/>
+            <img className='max-md:block hidden' src={hamburger} alt="Hamburger" width={20} height={20}
+            />
         </nav>
     </header>
   )

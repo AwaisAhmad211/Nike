@@ -15,13 +15,13 @@ function App() {
   return (
     <main className='relative'>
     <Navbar/>
-    <section className='xl:padding-y xl:padding-x'>
+    <section id='home' className='xl:padding-y xl:padding-x'>
      <Hero/>
     </section>
-    <section>
+    <section id='products'>
       <PopularProducts />
     </section>
-    <section>
+    <section id='about-us'>
       <SuperQuality />
     </section>
     <section>
@@ -33,7 +33,7 @@ function App() {
     <section>
       <CustomerReviews />
     </section>
-    <section className='padding-x sm:py-32 py-16 w-full'>
+    <section id='contact-us' className='padding-x sm:py-32 py-16 w-full'>
       <Subscribe />
     </section>
     <section className=' bg-black padding-x padding-t pb-8'>
