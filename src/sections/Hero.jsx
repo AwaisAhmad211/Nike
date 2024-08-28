@@ -4,41 +4,85 @@ import Button from "../components/Button";
 import ShoeCard from "../components/ShoeCard";
 import { bigShoe1 } from "../assets/images";
 import { arrowRight } from "../assets/icons";
-import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger)
 
 
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
-    useGSAP(()=>{
-      gsap.to("#h , #p ",{opacity:1,y:0,duration:1,stagger:0.5})
-      gsap.to("#s",{opacity:1,y:0,duration:1})
-    },[])
+  useGSAP(()=> {
+    gsap.from("#hero",{
+      opacity:0,
+      duration:1,
+      delay:0.5,
+      y:100,
+      stagger : 0.3,
+    })
+    gsap.from("#hero2",{
+      opacity:0,
+      duration:1,
+      delay:0.5,
+      y:100,
+      stagger : 0.3,
+      scrollTrigger : {
+        trigger : "#hero2",
+        scroller: "body",
+        start : "top 110%"
+      }
+    })
+    gsap.from("#hero3",{
+      opacity:0,
+      duration:1,
+      delay:0.5,
+      y:100,
+      stagger : 0.3,
+      scrollTrigger : {
+        trigger : "#hero3",
+        scroller: "body",
+        start : "top 110%"
+      }
+    })
+    gsap.from("#hero4",{
+      opacity:0,
+      duration:1,
+      delay:0.5,
+      y:100,
+      stagger : 0.3,
+      scrollTrigger : {
+        trigger : "#hero4",
+        scroller: "body",
+        start : "top 110%"
+      }
+    })
+  },[])
   return (
     <section
       id='home'
       className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container'
     >
       <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28'>
-        <p id="p" className='text-xl font-montserrat text-coral-red opacity-0 translate-y-16'>
+        <p id="hero" className='text-xl font-montserrat text-coral-red '>
           Our Summer collections
         </p>
 
-        <h1 id="h" className='mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold opacity-0 translate-y-16'>
+        <h1 id="hero" className='mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
           <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10 '>
             The New Arrival
           </span>
           <br />
           <span className='text-coral-red inline-block mt-3'>Nike</span> Shoes
         </h1>
-        <p id="p" className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm opacity-0 translate-y-16'>
+        <p id="hero" className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm '>
           Discover stylish Nike arrivals, quality comfort, and innovation for
           your active life.
         </p>
-
+          <div id="hero">
         <Button label='Shop now' arrowRight={arrowRight} />
+          </div>
 
-        <div id="s" className='flex justify-start items-start flex-wrap w-full mt-20 gap-16 opacity-0 translate-y-16'>
+        <div id="hero2" className='flex justify-start items-start flex-wrap w-full mt-20 gap-16 '>
           {statistics.map((stat, index) => (
             <div key={index}>
               <p className='text-4xl font-palanquin font-bold'>{stat.value}</p>
@@ -50,7 +94,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
+      <div id="hero3" className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
         <img
           src={bigShoeImg}
           alt='shoe colletion'
@@ -59,7 +103,7 @@ const Hero = () => {
           className='object-contain relative z-10'
         />
 
-        <div className='flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6'>
+        <div id="hero4" className='flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6'>
           {shoes.map((image, index) => (
             <div key={index}>
               <ShoeCard

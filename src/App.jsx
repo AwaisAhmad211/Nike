@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Hero from './sections/Hero'
 import Navbar from './components/Navbar'
 import PopularProducts from './sections/PopularProducts'
@@ -9,11 +8,10 @@ import CustomerReviews from './sections/CustomerReviews'
 import Subscribe from './sections/Subscribe'
 import Footer from './sections/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+function App() {
   return (
-    <main className='relative'>
+    <main id='main' className='relative overflow-hidden'>
     <Navbar/>
     <section id='home' className='xl:padding-y xl:padding-x'>
      <Hero/>

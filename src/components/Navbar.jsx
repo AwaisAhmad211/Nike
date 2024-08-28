@@ -2,23 +2,38 @@ import React from 'react'
 import { headerLogo } from '../assets/images'
 import { navLinks } from '../constants'
 import { hamburger } from '../assets/icons'
-import { useState } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger)
 
 
 const Navbar = () => {
-    useGSAP(()=>{
-       gsap.to("#nav",{opacity:1,y:0,stagger:2})
-    },[])
+    useGSAP(()=> {
+        gsap.from("#nav",{
+            opacity:0,
+            duration:1,
+            delay:0.5,
+            y:-100,
+          })
+          gsap.from("#nav2",{
+            opacity:0,
+            duration:1,
+            delay:0.5,
+            y:-100,
+            stagger : 0.2
+          })
+        },[])
+       
   return (
+    <>
     <header className='w-full max-containar absolute z-11'>
-        <nav id='nav' className='flex justify-between py-4 padding-x opacity-0 translate-y-12'>
+        <nav id='nav' className='flex justify-between py-4 padding-x'>
             <a href="/"><img src={headerLogo} alt="Logo" width={100}/></a>
             <div>
                 <ul className='flex gap-4 flex-row max-md:hidden cursor-pointer'>
                     {navLinks.map((item)=> (
-                        <li key={item.label}>
+                        <li id='nav2' key={item.label}>
                             <a href={item.href}>{item.label}</a>
                         </li>
                     ))}
@@ -29,6 +44,7 @@ const Navbar = () => {
             />
         </nav>
     </header>
+    </>
   )
 }
 
