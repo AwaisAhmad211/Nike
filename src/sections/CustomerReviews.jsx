@@ -15,13 +15,6 @@ const CustomerReviews = () => {
      stagger:0.5,
      scrollTrigger: "#gsap7"
     })
-    gsap.from("#SI",{
-     opacity:0,
-     scale:0.5,
-     duration:0.5,
-     delay:1,
-     scrollTrigger: "#SI"
-    })
    },[])
   return (
     <section className='bg-pale-blue w-full mt-24 '>
